@@ -24,6 +24,9 @@ class User:
     def getScore(self):
         return self.score
 
+    def printUserDetails(self):
+        print(self.firstName, " ", self.lastName, "\n", "User Score: ", self.score)
+
 
 class QuestionBank:
     def __init__(self):
@@ -35,28 +38,41 @@ class QuestionBank:
             
         }
 
+    # will convert question bank into a list then return random question 
     def getRandomQuestion(self):
-        var = []
-        random.choice(list(self.questions.items()))
+        conversion = list(self.questions.items())
+        random_entry = random.choice(conversion)
+        return random_entry
 
 
+    # Will check if second index is equal to user answer 
     def checkQuestionAnswer(self, question, userAnswer):
-        for key, value in question.items():
-            if(question[key] == userAnswer or value == userAnswer):
-                return True
-            else:
-                return False
+        if(question[1] == userAnswer):
+            return True
+        else:
+            return False
+            
+
+    def getDictSize(self):
+        return len(self.questions)
+
+
+
+
+
+
+
         
 
 # Testing QuestionBank Class
+"""
+myTest = QuestionBank()
+ques = myTest.getRandomQuestion()
+print(ques[0])
+ans = input("Enter your answer: ")
+myTest.checkQuestionAnswer(ques, ans)
+"""
 
-test = QuestionBank()
 
-randQ = test.getRandomQuestion()
 
-if(test.checkQuestionAnswer(randQ, "o")):
-    print("correct answer")
-else:
-    print("wrong answer")
 
-# print(res)
