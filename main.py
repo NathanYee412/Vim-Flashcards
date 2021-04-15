@@ -14,7 +14,8 @@ def main():
 
     for x in range(qs.getDictSize()):
         randQ = qs.getRandomQuestion()
-        ans = input(randQ[0])
+        print(randQ[0], ': ')
+        ans = input()
         res = qs.checkQuestionAnswer(randQ,ans)
         if(res):
             user.incrementScore()

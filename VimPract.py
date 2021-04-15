@@ -1,7 +1,7 @@
 import random
 
 
-print("Hello World! This is Vim practice")
+# print("Hello World! This is Vim practice")
 
 # Jump to the beginning of a word w
 # Jump to the beginning of each string W 
@@ -38,11 +38,21 @@ class QuestionBank:
             
         }
 
+
+
     # will convert question bank into a list then return random question 
     def getRandomQuestion(self):
         conversion = list(self.questions.items())
         random_entry = random.choice(conversion)
+        # print(conversion)
+        # print(random_entry.index(random_entry))
         return random_entry
+
+
+
+
+
+
 
 
     # Will check if second index is equal to user answer 
